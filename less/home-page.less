@@ -18,6 +18,22 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    .blast{
+      @media @mobile{
+        .basicwidth();
+      }
+    }
+    .sky {
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    .launch {
+      @media @mobile {
+        display: none;
+      }
+    }
 
     img {
       width: 28%;
@@ -43,11 +59,21 @@
     margin-top: 60px;
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
-    display: flex;
-    justify-content: center;
+    .center();
+    @media @mobile{
+      .basicwidth();
+      flex-direction: column-reverse;
+      align-content: center;
+      align-items: center;
+      padding: 0;
+
+    }
 
     .walk-text {
       width: 50%;
+      @media @mobile{
+        width: 95%;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -58,15 +84,33 @@
       }
 
       .btn {
+        .button(darkslategray, white);
+        @media @mobile{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-bottom:1%;
+
+        }
+        &:hover{
+          background-color: white;
+          color: darkslategray;
+        }
       }
     }
 
     .walk-img {
       width: 46%;
       margin-left: 4%;
+      @media @mobile{
+        width: 95%;
+        margin:0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+      }
       
       img {
-        width: 100%;
+        .basicwidth();
         height: auto;
         border-radius: 10px;
       }
